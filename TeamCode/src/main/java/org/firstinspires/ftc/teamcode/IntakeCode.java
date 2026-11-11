@@ -22,10 +22,10 @@ public class IntakeCode extends LinearOpMode {
 
         while (opModeIsActive()){
             if (gamepad1.right_bumper){
-                intakeMotor.setPower(0.7);
+                intakeMotor.setPower(1);
             }
             else if (gamepad1.left_bumper){
-                intakeMotor.setPower(-0.7);
+                intakeMotor.setPower(-1);
             }
             else{
                 intakeMotor.setPower(0);
