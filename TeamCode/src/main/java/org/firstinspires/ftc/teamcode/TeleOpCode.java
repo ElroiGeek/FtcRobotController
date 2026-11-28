@@ -38,6 +38,7 @@ public class TeleOpCode extends LinearOpMode {
         waitForStart();
         double tgtPowerY=0;
         double tgtPowerX=0;
+        double launcherPower=0.62;
         launcher.setPower(0.62);
         intakeMotor.setPower(1);
         while (opModeIsActive()){
@@ -59,6 +60,11 @@ public class TeleOpCode extends LinearOpMode {
                 gate.setDirection(Servo.Direction.FORWARD);
                 gate.setPosition(0.93);
             }
+            if(gamepad1.x)
+                launcherPower=0.62;
+            else if(gamepad1.y)
+                launcherPower=0.7;
+            launcher.setPower(launcherPower);
             telemetry.addData("Status", "Running");
             telemetry.update();
 
